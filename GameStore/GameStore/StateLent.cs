@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace GameStore
 {
-    abstract class State : IState
+    class StateLent : State
     {
-        protected string _GameName;
-
-        public State(string GameName)
+        User currentUser;
+        IState before;
+        public StateLent(string GameName, User lendTo, State Before) : base(GameName)
         {
-            _GameName = GameName;
+            currentUser = lendTo;
+            before = Before;
         }
 
         public IState Buy()
@@ -23,37 +24,37 @@ namespace GameStore
 
         public IState Download()
         {
-            Console.WriteLine(_GameName + "cannot be downloaded until you bought or lended it.");
+            before = before.Download();
             return this;
         }
 
         public IState Install()
         {
-            Console.WriteLine(_GameName + "cannot be installed until you downloaded it.");
+            before = before.Install();
             return this;
         }
 
         public IState Lend(User lendTo)
         {
-            Console.WriteLine(_GameName + "cannot be lended until you buy it.");
+            Console.WriteLine(_GameName + "cannot be lended - you already lent it to " + currentUser.Name);
             return this;
         }
 
         public IState Retrieve()
         {
-            Console.WriteLine(_GameName + "cannot be retrieved - you did not lend it to someone.");
-            return this;
+            Console.WriteLine(_GameName + "has been retrieved.");
+            return before;
         }
 
         public IState Start()
         {
-            Console.WriteLine(_GameName + "cannot be started until you installed it.");
+            Console.WriteLine(_GameName + "cannot be started - you lent it to " + currentUser.Name);
             return this;
         }
 
         public IState Uninstall()
         {
-            Console.WriteLine(_GameName + "cannot be uninstalled - you need to install it first.");
+            before = before.Unistall();
             return this;
         }
     }

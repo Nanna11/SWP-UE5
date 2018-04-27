@@ -48,6 +48,9 @@
     <Compile Include="IState.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StateDownloaded.cs" />
+    <Compile Include="StateInstalled.cs" />
+    <Compile Include="StateLent.cs" />
     <Compile Include="StateNotOwned.cs" />
     <Compile Include="StateOwned.cs" />
     <Compile Include="User.cs" />

@@ -15,13 +15,13 @@ namespace GameStore
         public new IState Download()
         {
             Console.WriteLine(_GameName + "has been downloaded.");
-            
+            return new StateDownloaded(_GameName);
         }
 
         public new IState Lend(User lendTo)
         {
             Console.WriteLine(_GameName + "has been lent to " + lendTo.Name);
-            
+            return new StateLent(_GameName, lendTo, this);
         }
     }
 }

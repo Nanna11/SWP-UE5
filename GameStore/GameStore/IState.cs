@@ -12,8 +12,8 @@ namespace GameStore
         IState Download();
         IState Install();
         IState Start();
+        IState Unistall();
         IState Lend(User lendTo);
-        IState Return();
         IState Retrieve();
     }
 }
