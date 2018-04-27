@@ -8,5 +8,14 @@ namespace GameStore
 {
     class User
     {
+        string _Name;
+
+        public string Name
+        {
+            get
+            {
+                return _Name;
+            }
+        }
     }
 }

@@ -8,5 +8,12 @@ namespace GameStore
 {
     interface IState
     {
+        IState Buy();
+        IState Download();
+        IState Install();
+        IState Start();
+        IState Lend(User lendTo);
+        IState Return();
+        IState Retrieve();
     }
 }

@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace GameStore
 {
-    class StateNotOwned
+    class StateNotOwned : State
     {
+        public StateNotOwned(string GameName) : base(GameName)
+        {
+        }
+
+        public new IState Buy()
+        {
+            Console.WriteLine(_GameName + "has been bought.");
+            return new StateOwned(_GameName);
+        }
     }
 }
