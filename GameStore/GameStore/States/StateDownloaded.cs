@@ -3,19 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GameStore.Interfaces;
 
-namespace GameStore
+namespace GameStore.States
 {
-    class StateInstalled : State
+    class StateDownloaded : State
     {
-        public StateInstalled(string GameName) : base(GameName)
+        public StateDownloaded(string GameName) : base(GameName)
         {
         }
 
-        public new IState Start()
+        public new IState Install()
         {
-            Console.WriteLine("You played " + _GameName + ". That was fun.");
-            return this;
+            Console.WriteLine(_GameName + "has been installed.");
+            return new StateInstalled(_GameName);
         }
 
         public IState Download()
@@ -24,17 +25,11 @@ namespace GameStore
             return this;
         }
 
-        public new IState Uninstall()
-        {
-            Console.WriteLine(_GameName + "has been unistalled.");
-            return new StateDownloaded(_GameName);
-        }
-
-
         public new IState Lend(User lendTo)
         {
             Console.WriteLine(_GameName + "has been lent to " + lendTo.Name);
             return new StateLent(_GameName, lendTo, this);
         }
+
     }
 }

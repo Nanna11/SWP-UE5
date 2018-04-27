@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GameStore
+namespace GameStore.Interfaces
 {
-    interface IState
+    public interface IState
     {
         IState Buy();
         IState Download();
         IState Install();
         IState Start();
-        IState Unistall();
+        IState Uninstall();
         IState Lend(User lendTo);
         IState Retrieve();
     }

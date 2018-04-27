@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GameStore.Interfaces;
 
-namespace GameStore
+namespace GameStore.States
 {
     class StateNotOwned : State
     {
