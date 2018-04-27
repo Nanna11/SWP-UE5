@@ -42,5 +42,10 @@ namespace GameStore
         {
             State = State.Retrieve();
         }
+
+        public void Uninstall()
+        {
+            State = State.Uninstall();
+        }
     }
 }
