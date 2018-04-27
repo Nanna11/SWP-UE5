@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace GameStore
 {
-    class User
+    public class User
     {
+        public User(string name)
+        {
+            _Name = name;
+        }
         string _Name;
 
         public string Name

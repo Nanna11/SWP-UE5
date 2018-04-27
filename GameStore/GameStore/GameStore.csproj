@@ -43,6 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\BuyCommand.cs" />
+    <Compile Include="Commands\Command.cs" />
+    <Compile Include="Commands\DownloadCommand.cs" />
+    <Compile Include="Commands\InstallCommand.cs" />
+    <Compile Include="Commands\LendCommand.cs" />
+    <Compile Include="Commands\RetrieveCommand.cs" />
+    <Compile Include="Commands\ReturnCommand.cs" />
+    <Compile Include="Commands\StartCommand.cs" />
     <Compile Include="State.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="IState.cs" />

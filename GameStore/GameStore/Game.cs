@@ -6,21 +6,45 @@ using System.Threading.Tasks;
 
 namespace GameStore
 {
-    class Game
+    public class Game
     {
-        IState _State;
+        public Game() { }
 
-        IState State
+        IState State { get; set; }
+
+        public void Buy()
         {
-            get
-            {
-                return _State;
-            }
+            State = State.Buy();
+        }
 
-            set
-            {
-                _State = value;
-            }
+        public void Download()
+        {
+            State = State.Download();
+        }
+
+        public void Install()
+        {
+            State = State.Install();
+        }
+
+        public void Start()
+        {
+            State = State.Start();
+        }
+
+        public void Lend(User lendTo)
+        {
+            State = State.Lend(lendTo);
+        }
+
+        public void Retrieve()
+        {
+            State = State.Retrieve();
+        }
+
+        public void Return()
+        {
+            State = State.Return();
         }
     }
 }
