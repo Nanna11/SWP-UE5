@@ -13,7 +13,7 @@ namespace GameStore.States
         {
         }
 
-        public new IState Buy()
+        public override IState Buy()
         {
             Console.WriteLine(_GameName + "has been bought.");
             return new StateOwned(_GameName);

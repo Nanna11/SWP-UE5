@@ -17,43 +17,43 @@ namespace GameStore.States
             before = Before;
         }
 
-        public IState Buy()
+        public override IState Buy()
         {
             Console.WriteLine(_GameName + "cannot be bought bought - you already own it");
             return this;
         }
 
-        public IState Download()
+        public override IState Download()
         {
             before = before.Download();
             return this;
         }
 
-        public IState Install()
+        public override IState Install()
         {
             before = before.Install();
             return this;
         }
 
-        public IState Lend(User lendTo)
+        public override IState Lend(User lendTo)
         {
             Console.WriteLine(_GameName + "cannot be lended - you already lent it to " + currentUser.Name);
             return this;
         }
 
-        public IState Retrieve()
+        public override IState Retrieve()
         {
             Console.WriteLine(_GameName + "has been retrieved.");
             return before;
         }
 
-        public IState Start()
+        public override IState Start()
         {
             Console.WriteLine(_GameName + "cannot be started - you lent it to " + currentUser.Name);
             return this;
         }
 
-        public IState Uninstall()
+        public override IState Uninstall()
         {
             before = before.Uninstall();
             return this;

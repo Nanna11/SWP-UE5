@@ -13,19 +13,19 @@ namespace GameStore.States
         {
         }
 
-        public new IState Install()
+        public override IState Install()
         {
             Console.WriteLine(_GameName + "has been installed.");
             return new StateInstalled(_GameName);
         }
 
-        public IState Download()
+        public override IState Download()
         {
             Console.WriteLine(_GameName + "cannot be downloaded - you already downloaded it.");
             return this;
         }
 
-        public new IState Lend(User lendTo)
+        public override IState Lend(User lendTo)
         {
             Console.WriteLine(_GameName + "has been lent to " + lendTo.Name);
             return new StateLent(_GameName, lendTo, this);

@@ -4,12 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GameStore.Interfaces;
+using GameStore.States;
 
 namespace GameStore
 {
     public class Game
     {
-        public Game() { }
+        public Game(string GameName)
+        {
+            State = new StateNotOwned(GameName);
+        }
 
         IState State { get; set; }
 

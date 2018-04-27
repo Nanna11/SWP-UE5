@@ -51,6 +51,7 @@
     <Compile Include="Commands\RetrieveCommand.cs" />
     <Compile Include="Commands\StartCommand.cs" />
     <Compile Include="Commands\UninstallCommand.cs" />
+    <Compile Include="Interfaces\ICommand.cs" />
     <Compile Include="States\State.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Interfaces\IState.cs" />

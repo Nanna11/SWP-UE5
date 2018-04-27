@@ -13,26 +13,26 @@ namespace GameStore.States
         {
         }
 
-        public new IState Start()
+        public override IState Start()
         {
             Console.WriteLine("You played " + _GameName + ". That was fun.");
             return this;
         }
 
-        public IState Download()
+        public override IState Download()
         {
             Console.WriteLine(_GameName + "cannot be downloaded - you already downloaded it.");
             return this;
         }
 
-        public new IState Uninstall()
+        public override IState Uninstall()
         {
             Console.WriteLine(_GameName + "has been unistalled.");
             return new StateDownloaded(_GameName);
         }
 
 
-        public new IState Lend(User lendTo)
+        public override IState Lend(User lendTo)
         {
             Console.WriteLine(_GameName + "has been lent to " + lendTo.Name);
             return new StateLent(_GameName, lendTo, this);
