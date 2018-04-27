@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GameStore
 {
-    interface Interface1
+    class User
     {
     }
 }
